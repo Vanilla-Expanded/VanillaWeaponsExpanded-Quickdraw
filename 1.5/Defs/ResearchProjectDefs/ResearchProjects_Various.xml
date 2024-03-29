@@ -13,6 +13,14 @@
 		</prerequisites>
 		<researchViewX>6.00</researchViewX>
 		<researchViewY>1.95</researchViewY>
+		<generalRules>
+  <rulesStrings>
+    <li>subject->the edge of speed</li>
+    <li>subject_story->mastered the art of weapon design for speed, crafting firearms that are as swift to engage as they are lethal</li>
+    <li>subject_story->engineered mechanisms that minimize draw time, ensuring that readiness and rapid response define every encounter</li>
+    <li>subject_gerund->shaping the future of combat with the quicksilver grace of rapid deployment</li>
+  </rulesStrings>
+</generalRules>
 	</ResearchProjectDef>
 
 </Defs>
