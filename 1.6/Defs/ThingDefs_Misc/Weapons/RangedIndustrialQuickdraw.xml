@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- Automatic Pistol -->
+  <!-- Lightweight Pistol -->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>VWE_Gun_AutomaticPistol</defName>
-    <label>automatic pistol</label>
-    <description>An advanced automatic pistol. It lacks the stopping power, but is easy to draw. Fires a three round burst.</description>
+    <label>lightweight pistol</label>
+    <description>A highly modified, fully automatic variant of the autopistol, designed to deliver maximum short-range firepower in a compact package. Due to light weight, it is very quick to draw.</description>
     <graphicData>
       <texPath>Things/WeaponRanged/AutomaticPistol</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -14,24 +14,30 @@
     <recipeMaker>
       <researchPrerequisite>VWE_Quickdraw</researchPrerequisite>
       <skillRequirements>
-        <Crafting>6</Crafting>
+        <Crafting>5</Crafting>
       </skillRequirements>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
     </recipeMaker>
+    <!-- TODO: fill up -->
     <weaponTags>
       <li>IndustrialGunAdvanced</li>
     </weaponTags>
+    <weaponClasses>
+    </weaponClasses>
     <statBases>
-      <WorkToMake>5000</WorkToMake>
+      <WorkToMake>6800</WorkToMake>
       <Mass>1</Mass>
-      <AccuracyTouch>0.75</AccuracyTouch>
-      <AccuracyShort>0.65</AccuracyShort>
-      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.55</AccuracyShort>
+      <AccuracyMedium>0.3</AccuracyMedium>
       <AccuracyLong>0.25</AccuracyLong>
-      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.233333</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>15</Steel>
-	  <Plasteel>10</Plasteel>
+      <Steel>40</Steel>
+      <Plasteel>5</Plasteel>
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <verbs>
@@ -39,8 +45,8 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_Autopistol</defaultProjectile>
-        <warmupTime>0.05</warmupTime>
-        <range>25.9</range>
+        <warmupTime>0.166666</warmupTime>
+        <range>23.9</range>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
         <soundCast>Shot_Autopistol</soundCast>
@@ -54,7 +60,8 @@
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>9</power>
+        <power>8</power>
+        <armorPenetration>0.13</armorPenetration>
         <cooldownTime>2</cooldownTime>
       </li>
       <li>
@@ -63,17 +70,50 @@
           <li>Blunt</li>
           <li>Poke</li>
         </capacities>
-        <power>9</power>
+        <power>8</power>
+        <armorPenetration>0.13</armorPenetration>
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
   </ThingDef>
-  
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>VWE_Bullet_LightweightPistol</defName>
+    <label>lightweight pistol bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
   <!-- Bullpup Rifle -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>VWE_Bullet_BullpupRifle</defName>
+    <label>bullpup rifle bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <armorPenetrationBase>0.16</armorPenetrationBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>VWE_Gun_BullpupRifle</defName>
     <label>bullpup rifle</label>
-    <description>An assault rifle with a magazine behind the trigger. It has good range, decent power, and good accuracy, and due to lightweight material it's also quick to draw and fire.</description>
+    <description>A compact, general-purpose assault rifle utilizing a bullpup configuration. The weapon's design places the action behind the trigger group, significantly reducing its overall length for enhanced maneuverability and an extremely fast draw time.</description>
     <graphicData>
       <texPath>Things/WeaponRanged/BullpupRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -84,19 +124,22 @@
       <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
     </recipeMaker>
     <statBases>
-      <WorkToMake>40000</WorkToMake>
-      <Mass>3</Mass>
-      <AccuracyTouch>0.60</AccuracyTouch>
-      <AccuracyShort>0.70</AccuracyShort>
-      <AccuracyMedium>0.65</AccuracyMedium>
-      <AccuracyLong>0.55</AccuracyLong>
-      <RangedWeapon_Cooldown>2.60</RangedWeapon_Cooldown>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>2.5</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>2.533333</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>30</Steel>
-	  <Plasteel>30</Plasteel>
+      <Steel>60</Steel>
+      <Plasteel>15</Plasteel>
       <ComponentIndustrial>7</ComponentIndustrial>
     </costList>
     <verbs>
@@ -104,7 +147,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_AssaultRifle</defaultProjectile>
-        <warmupTime>0.05</warmupTime>
+        <warmupTime>0.166666</warmupTime>
         <range>30.9</range>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
@@ -113,9 +156,12 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-		<weaponTags>
-			<li>IndustrialGunAdvanced</li>
-		</weaponTags>
+    <!-- TODO: fill up -->
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <weaponClasses>
+    </weaponClasses>
     <tools>
       <li>
         <label>stock</label>
@@ -123,6 +169,7 @@
           <li>Blunt</li>
         </capacities>
         <power>9</power>
+        <armorPenetration>0.13</armorPenetration>
         <cooldownTime>2</cooldownTime>
       </li>
       <li>
@@ -132,21 +179,22 @@
           <li>Poke</li>
         </capacities>
         <power>9</power>
+        <armorPenetration>0.13</armorPenetration>
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
   </ThingDef>
-  
+
   <!-- Bullpup DMR -->
-  
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_BullpupDMR</defName>
     <label>bullpup DMR bullet</label>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>16</damageAmountBase>
-      <stoppingPower>1.5</stoppingPower>
-      <speed>80</speed>
+      <damageAmountBase>21</damageAmountBase>
+      <armorPenetrationBase>0.3</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>90</speed>
     </projectile>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>
@@ -157,61 +205,63 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>VWE_Gun_BullpupDMR</defName>
     <label>bullpup DMR</label>
-    <description>A bullpup designated marksman rifle.\n\nWhilst it shares similarities with a standard bolt-action rifle, it trades off it's damage for firing two shots in quick succession. Due to lightweight material, it is quick to draw and fire.</description>
+    <description>A compact designated marksman rifle utilizing a bullpup configuration. This design shifts the action back, resulting in a shorter, lighter package that enables an extremely fast draw and aiming time.</description>
     <graphicData>
       <texPath>Things/WeaponRanged/BullpupDMR</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-	  <drawSize>1.12</drawSize>
+      <drawSize>1.12</drawSize>
     </graphicData>
-	
     <soundInteract>Interact_Rifle</soundInteract>
     <statBases>
-      <WorkToMake>45000</WorkToMake>
-      <Mass>3.6</Mass>
-      <AccuracyTouch>0.65</AccuracyTouch>
-      <AccuracyShort>0.70</AccuracyShort>
-      <AccuracyMedium>0.80</AccuracyMedium>
-      <AccuracyLong>0.70</AccuracyLong>
-      <RangedWeapon_Cooldown>2.9</RangedWeapon_Cooldown>
+      <WorkToMake>55000</WorkToMake>
+      <Mass>3</Mass>
+      <AccuracyTouch>0.6</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>0.82</AccuracyLong>
+      <RangedWeapon_Cooldown>2.833333</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>90</Steel>
-	  <Plasteel>40</Plasteel>
-      <ComponentIndustrial>10</ComponentIndustrial>
+      <Steel>65</Steel>
+      <Plasteel>20</Plasteel>
+      <ComponentIndustrial>7</ComponentIndustrial>
     </costList>
     <recipeMaker>
-	  <recipeUsers>
-		<li>TableMachining</li>
-	  </recipeUsers>
-      <researchPrerequisite>VWE_DesignatedMarksmanRifle</researchPrerequisite>
+      <researchPrerequisite>VWE_Quickdraw</researchPrerequisite>
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
     </recipeMaker>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_BullpupDMR</defaultProjectile>
-        <warmupTime>0.05</warmupTime>
-        <range>36.9</range>
-        <burstShotCount>2</burstShotCount>
-        <ticksBetweenBurstShots>42</ticksBetweenBurstShots>
+        <warmupTime>0.166666</warmupTime>
+        <range>42.9</range>
+        <burstShotCount>1</burstShotCount>
         <soundCast>VWE_Shot_MarksmanRifle</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-	<weaponTags>
-		<li>SniperRifle</li>
-	</weaponTags>
+    <!-- TODO: fill up -->
+    <weaponTags>
+      <li>SniperRifle</li>
+    </weaponTags>
+    <weaponClasses>
+    </weaponClasses>
     <tools>
       <li>
         <label>stock</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>11</power>
+        <power>9</power>
+        <armorPenetration>0.13</armorPenetration>
         <cooldownTime>2</cooldownTime>
       </li>
       <li>
@@ -221,63 +271,88 @@
           <li>Poke</li>
         </capacities>
         <power>9</power>
+        <armorPenetration>0.13</armorPenetration>
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
   </ThingDef>
-  
+
   <!-- PDW -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>VWE_Bullet_PDW</defName>
+    <label>PDW bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>60</speed>
+    </projectile>
+  </ThingDef>
 
   <ThingDef ParentName="BaseHumanMakeableGun">
-	<defName>VWE_Gun_PDW</defName>
-	<label>PDW</label>
-	<description>A compact, lightweight submachine gun used as a personal defense weapon. Quick to draw and fire.</description>
-	<graphicData>
-		<texPath>Things/WeaponRanged/PDW</texPath>
-	<graphicClass>Graphic_Single</graphicClass>
-	</graphicData>
-	<soundInteract>Interact_SMG</soundInteract>
+    <defName>VWE_Gun_PDW</defName>
+    <label>PDW</label>
+    <description>A lightweight, modern personal defense weapon designed for maximum portability and quick engagement. Its high rate of fire in a long burst makes it highly effective at close to medium range. Due to light weight, it is very quick to draw.</description>
+    <graphicData>
+      <texPath>Things/WeaponRanged/PDW</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
     <recipeMaker>
       <researchPrerequisite>VWE_Quickdraw</researchPrerequisite>
       <skillRequirements>
         <Crafting>6</Crafting>
       </skillRequirements>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
     </recipeMaker>
-	<statBases>
-		<WorkToMake>24000</WorkToMake>
-		<Mass>3</Mass>
-		<AccuracyTouch>0.85</AccuracyTouch>
-		<AccuracyShort>0.65</AccuracyShort>
-		<AccuracyMedium>0.35</AccuracyMedium>
-		<AccuracyLong>0.20</AccuracyLong>
-		<RangedWeapon_Cooldown>2.35</RangedWeapon_Cooldown>
-	</statBases>
-	<costList>
-		<Steel>50</Steel>
-		<Plasteel>25</Plasteel>
-		<ComponentIndustrial>4</ComponentIndustrial>
-	</costList>
+    <statBases>
+      <WorkToMake>26000</WorkToMake>
+      <Mass>2</Mass>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.4</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>1.966666</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <Plasteel>10</Plasteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
     <verbs>
-			<li>
-				<verbClass>Verb_Shoot</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>Bullet_HeavySMG</defaultProjectile>
-				<warmupTime>0.05</warmupTime>
-				<range>22.9</range>
-				<burstShotCount>3</burstShotCount>
-				<ticksBetweenBurstShots>11</ticksBetweenBurstShots>
-				<soundCast>Shot_HeavySMG</soundCast>
-				<soundCastTail>GunTail_Heavy</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
-			</li>
-		</verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>VWE_Bullet_PDW</defaultProjectile>
+        <warmupTime>0.166666</warmupTime>
+        <range>23.9</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <!-- TODO: fill up -->
+    <weaponTags>
+    </weaponTags>
+    <weaponClasses>
+    </weaponClasses>
     <tools>
       <li>
         <label>grip</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>9</power>
+        <power>8</power>
+        <armorPenetration>0.13</armorPenetration>
         <cooldownTime>2</cooldownTime>
       </li>
       <li>
@@ -286,7 +361,8 @@
           <li>Blunt</li>
           <li>Poke</li>
         </capacities>
-        <power>9</power>
+        <power>8</power>
+        <armorPenetration>0.13</armorPenetration>
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
