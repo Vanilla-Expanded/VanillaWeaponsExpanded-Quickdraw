@@ -20,11 +20,13 @@
         <li>TableMachining</li>
       </recipeUsers>
     </recipeMaker>
-    <!-- TODO: fill up -->
     <weaponTags>
       <li>IndustrialGunAdvanced</li>
+      <li>Autopistol</li>
     </weaponTags>
     <weaponClasses>
+      <li>RangedLight</li>
+      <li>ShortShots</li>
     </weaponClasses>
     <statBases>
       <WorkToMake>6800</WorkToMake>
@@ -156,11 +158,12 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <!-- TODO: fill up -->
     <weaponTags>
       <li>IndustrialGunAdvanced</li>
+      <li>AssaultRifle</li>
     </weaponTags>
     <weaponClasses>
+      <li>RangedLight</li>
     </weaponClasses>
     <tools>
       <li>
@@ -248,11 +251,12 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <!-- TODO: fill up -->
-    <weaponTags>
+    <weaponTags Inherit="False">
+      <!-- We don't inherit the "Gun" tag. -->
       <li>SniperRifle</li>
     </weaponTags>
     <weaponClasses>
+      <li>LongShots</li>
     </weaponClasses>
     <tools>
       <li>
@@ -340,10 +344,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <!-- TODO: fill up -->
     <weaponTags>
+      <li>ShortShots</li>
+      <li>IndustrialGunAdvanced</li>
     </weaponTags>
     <weaponClasses>
+      <li>ShortShots</li>
+      <li>RangedHeavy</li>
     </weaponClasses>
     <tools>
       <li>
