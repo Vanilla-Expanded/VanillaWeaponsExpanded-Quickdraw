@@ -2,7 +2,7 @@
 <Defs>
 
   <!-- Lightweight Pistol -->
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="BaseHumanMakeableGun" Name="VWE_Gun_AutomaticPistol_Base">
     <defName>VWE_Gun_AutomaticPistol</defName>
     <label>lightweight pistol</label>
     <description>A highly modified, fully automatic variant of the autopistol, designed to deliver maximum short-range firepower in a compact package. Due to light weight, it is very quick to draw.</description>
@@ -110,7 +110,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="BaseHumanMakeableGun" Name="VWE_Gun_BullpupRifle_Base">
     <defName>VWE_Gun_BullpupRifle</defName>
     <label>bullpup rifle</label>
     <description>A compact, general-purpose assault rifle utilizing a bullpup configuration. The weapon's design places the action behind the trigger group, significantly reducing its overall length for enhanced maneuverability and an extremely fast draw time.</description>
@@ -202,7 +202,7 @@
     </graphicData>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="BaseHumanMakeableGun" Name="VWE_Gun_BullpupDMR_Base">
     <defName>VWE_Gun_BullpupDMR</defName>
     <label>bullpup DMR</label>
     <description>A compact designated marksman rifle utilizing a bullpup configuration. This design shifts the action back, resulting in a shorter, lighter package that enables an extremely fast draw and aiming time.</description>
@@ -294,7 +294,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="BaseHumanMakeableGun" Name="VWE_Gun_PDW_Base">
     <defName>VWE_Gun_PDW</defName>
     <label>PDW</label>
     <description>A lightweight, modern personal defense weapon designed for maximum portability and quick engagement. Its high rate of fire in a long burst makes it highly effective at close to medium range. Due to light weight, it is very quick to draw.</description>
